@@ -1,0 +1,559 @@
+/* ==================== 全局导航栏样式 ==================== */
+
+/* 固定导航栏 - 全局生效 */
+.header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 100 !important;
+    background: rgba(0,0,0,0.8) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 0.75rem 0;
+}
+
+.header-nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+/* Logo区域 - 绝对定位居中 */
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo a {
+    color: white !important;
+    font-size: 1.6rem !important;
+    font-weight: 600;
+}
+
+/* 菜单样式 */
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-left: auto;
+}
+
+.menu li {
+    position: relative;
+}
+
+/* 导航按钮之间的分隔线 */
+.menu li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 18px;
+    background: rgba(255,255,255,0.3);
+}
+
+.menu li a {
+    color: rgba(255,255,255,0.9) !important;
+    font-size: 1.1rem !important;
+    font-weight: 500;
+    padding: 0.75rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+.menu li a:hover {
+    color: white !important;
+    background: rgba(255,255,255,0.15);
+}
+
+.menu li a.active {
+    color: white !important;
+    background: rgba(255,255,255,0.2);
+}
+
+/* 主题切换按钮 */
+.theme-toggle {
+    color: white;
+    margin-left: 1rem;
+}
+
+/* 搜索按钮特殊处理 */
+.menu li:last-child a {
+    font-size: 1.2rem !important;
+    padding: 0.75rem 1rem;
+}
+
+/* ==================== 首页英雄图样式 ==================== */
+
+/* 首页主体 - 无padding */
+.main {
+    padding-top: 0 !important;
+    position: relative;
+}
+
+/* 全屏英雄图容器 */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* 背景图片 */
+.hero-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+/* 半透明遮罩 */
+.hero-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.4) 0%,
+        rgba(0,0,0,0.5) 50%,
+        rgba(0,0,0,0.6) 100%
+    );
+    z-index: 1;
+}
+
+/* 内容区域 */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    letter-spacing: 0.05em;
+}
+
+.hero-content .emoji {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    opacity: 0.95;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    line-height: 1.6;
+}
+
+/* ==================== 其他页面布局 ==================== */
+
+/* list页面（分类、标签等）的主体需要避开导航栏 */
+.list .main {
+    padding-top: 100px !important;
+    min-height: 100vh;
+    padding-bottom: 2rem;
+}
+
+/* 页面标题区域 */
+.page-header {
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+/* 内容卡片样式 */
+.content article {
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* 暗色模式适配 */
+[data-theme="dark"] .content article {
+    background: rgba(45,45,45,0.95);
+}
+
+[data-theme="dark"] .posts-section {
+    background: rgba(30,30,30,0.95);
+}
+
+[data-theme="dark"] .post-entry {
+    background: #2d2d2d;
+}
+
+[data-theme="dark"] .post-entry a {
+    color: #fff;
+}
+
+[data-theme="dark"] .posts-section h2 {
+    border-bottom-color: #404040;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    
+    .hero-content .emoji {
+        font-size: 3.5rem;
+    }
+
+    .menu {
+        gap: 0;
+    }
+    
+    .menu li a {
+        font-size: 0.9rem !important;
+        padding: 0.5rem 0.6rem;
+    }
+
+    .menu li:not(:last-child)::after {
+        right: -4px;
+        height: 14px;
+    }
+
+    .list .main {
+        padding-top: 80px !important;
+    }
+}
+
+/* ==================== 读书笔记卡片样式 ==================== */
+
+/* 读书笔记容器 - 单栏布局 */
+.book-card-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.book-card {
+    display: flex;
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.book-image {
+    flex-shrink: 0;
+    width: 180px;
+    height: 240px;
+    overflow: hidden;
+}
+
+.book-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-content {
+    padding: 1.75rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: #1a1a1a;
+}
+
+.book-author {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 0 1rem 0;
+    font-style: italic;
+}
+
+.book-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+    margin: 0;
+    flex: 1;
+}
+
+/* 暗色模式读书笔记 */
+[data-theme="dark"] .book-card {
+    background: rgba(45,45,45,0.95);
+}
+
+[data-theme="dark"] .book-title {
+    color: #fff;
+}
+
+[data-theme="dark"] .book-author {
+    color: #aaa;
+}
+
+[data-theme="dark"] .book-description {
+    color: #ccc;
+}
+
+/* ==================== 生活记录卡片样式 ==================== */
+
+/* 生活记录容器 - 单栏布局 */
+.life-card-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.life-card {
+    display: flex;
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.life-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.life-image {
+    flex-shrink: 0;
+    width: 180px;
+    height: 240px;
+    overflow: hidden;
+}
+
+.life-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.life-content {
+    padding: 1.75rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.life-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: #1a1a1a;
+}
+
+.life-date {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 0 1rem 0;
+}
+
+.life-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+    margin: 0;
+    flex: 1;
+}
+
+/* 暗色模式生活记录 */
+[data-theme="dark"] .life-card {
+    background: rgba(45,45,45,0.95);
+}
+
+[data-theme="dark"] .life-title {
+    color: #fff;
+}
+
+[data-theme="dark"] .life-date {
+    color: #aaa;
+}
+
+[data-theme="dark"] .life-description {
+    color: #ccc;
+}
+
+/* ==================== 摄影集卡片样式 ==================== */
+
+/* 摄影集容器 - 左右双栏布局 */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.photo-card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.photo-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.photo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.photo-card:hover .photo-image img {
+    transform: scale(1.05);
+}
+
+.photo-info {
+    padding: 1.5rem;
+}
+
+.photo-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem 0;
+    color: #1a1a1a;
+}
+
+.photo-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0 0 1rem 0;
+}
+
+.photo-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.photo-date,
+.photo-location {
+    font-size: 0.85rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* 暗色模式摄影集 */
+[data-theme="dark"] .photo-card {
+    background: rgba(45,45,45,0.95);
+}
+
+[data-theme="dark"] .photo-title {
+    color: #fff;
+}
+
+[data-theme="dark"] .photo-description {
+    color: #bbb;
+}
+
+[data-theme="dark"] .photo-date,
+[data-theme="dark"] .photo-location {
+    color: #999;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .book-card {
+        flex-direction: column;
+    }
+    
+    .book-image {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .book-content {
+        padding: 1.25rem;
+    }
+    
+    .book-title {
+        font-size: 1.25rem;
+    }
+    
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .photo-image {
+        height: 180px;
+    }
+    
+    .life-card {
+        flex-direction: column;
+    }
+    
+    .life-image {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .life-content {
+        padding: 1.25rem;
+    }
+    
+    .life-title {
+        font-size: 1.25rem;
+    }
+}

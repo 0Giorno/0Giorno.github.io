@@ -1,0 +1,10 @@
+<div class="book-card">
+    <div class="book-image">
+        <img src="https://picsum.photos/seed/{{ md5 (.Get "title") }}/180/240" alt="{{ .Get "title" }}">
+    </div>
+    <div class="book-content">
+        <h3 class="book-title">{{ .Get "title" }}</h3>
+        <p class="book-author">{{ .Get "author" }}</p>
+        <p class="book-description">{{ .Get "description" }}</p>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+{{- define "main" }}
+
+{{/* 英雄图区域 - 全屏无滚动 */}}
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        {{- with .Params.emoji }}<span class="emoji">{{ . }}</span>{{ end }}
+        <h1>{{ .Title }}</h1>
+        {{- with .Params.description }}<p>{{ . }}</p>{{ end }}
+    </div>
+</section>
+
+{{- end }}

@@ -1,0 +1,13 @@
+<div class="photo-card">
+    <div class="photo-image">
+        <img src="https://picsum.photos/seed/{{ md5 (.Get "title") }}/600/400" alt="{{ .Get "title" }}">
+    </div>
+    <div class="photo-info">
+        <h3 class="photo-title">{{ .Get "title" }}</h3>
+        <p class="photo-description">{{ .Get "description" }}</p>
+        <div class="photo-meta">
+            <span class="photo-date">📅 {{ .Get "date" }}</span>
+            <span class="photo-location">📍 {{ .Get "location" }}</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>欢迎来到二狗君的博客 on 天才二狗君のBlog</title>
+    <link>http://localhost:7777/</link>
+    <description>Recent content in 欢迎来到二狗君的博客 on 天才二狗君のBlog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 18 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:7777/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>读书笔记</title>
+      <link>http://localhost:7777/books/</link>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:7777/books/</guid>
+      <description>阅读心得与笔记</description>
+    </item>
+    <item>
+      <title>欢迎来到二狗君的博客</title>
+      <link>http://localhost:7777/posts/welcome/</link>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:7777/posts/welcome/</guid>
+      <description>这是我的第一篇博客文章</description>
+    </item>
+    <item>
+      <title>论文笔记</title>
+      <link>http://localhost:7777/papers/</link>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:7777/papers/</guid>
+      <description>学术论文阅读笔记</description>
+    </item>
+    <item>
+      <title>生活记录</title>
+      <link>http://localhost:7777/life/</link>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:7777/life/</guid>
+      <description>生活中的点滴记录</description>
+    </item>
+  </channel>
+</rss>

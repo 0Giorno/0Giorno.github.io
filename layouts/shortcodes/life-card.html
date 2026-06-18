@@ -1,0 +1,10 @@
+<div class="life-card">
+    <div class="life-image">
+        <img src="https://picsum.photos/seed/{{ md5 (.Get "title") }}/180/240" alt="{{ .Get "title" }}">
+    </div>
+    <div class="life-content">
+        <h3 class="life-title">{{ .Get "title" }}</h3>
+        <p class="life-date">📅 {{ .Get "date" }}</p>
+        <p class="life-description">{{ .Get "description" }}</p>
+    </div>
+</div>

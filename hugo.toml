@@ -1,0 +1,51 @@
+baseURL = 'https://0giorno.github.io/'
+title = '天才二狗君のBlog'
+theme = ["PaperMod"]
+
+enableRobotsTXT = true
+enableInlineShortcodes = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[menu]
+  [[menu.main]]
+    name = "读书笔记"
+    url = "/books/"
+    weight = 1
+
+  [[menu.main]]
+    name = "摄影集"
+    url = "/photography/"
+    weight = 2
+
+  [[menu.main]]
+    name = "生活记录"
+    url = "/life/"
+    weight = 3
+
+  [[menu.main]]
+    name = "🔍"
+    url = "/search/"
+    weight = 4
+
+[params]
+  description = "个人博客"
+  mainSections = ["posts"]
+  showDate = true
+  ShowReadingTime = true
+  showBreadcrumbs = true
+  ShowPageNums = true
+  defaultTheme = "auto"
+  enableSearch = true
+
+  # 首页英雄图配置
+  [params.homeInfoParams]
+    Title = "欢迎来到我的博客"
+    Emoji = "🌍"
+    Content = "记录生活，分享美好"
+
+[Languages.zh-cn]
+  label = "中文"
+  weight = 1
